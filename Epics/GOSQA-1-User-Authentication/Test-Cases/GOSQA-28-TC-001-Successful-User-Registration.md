@@ -30,9 +30,9 @@ Verify that a new user can successfully register an account using valid registra
 
 | Step | Action | Test Data | Expected Result |
 |------|--------|-----------|-----------------|
-| 1 | Open the registration page. | URL: `/register` | Registration page is displayed successfully. |
+| 1 | Open the registration page. |  | Registration page is displayed successfully. |
 | 2 | Enter a unique username. | `hamed123` | Username is accepted. |
-| 3 | Enter a valid email address. | `hamed@example.com` | Email address is accepted. |
+| 3 | Enter a valid email address. || Email address is accepted. |
 | 4 | Enter a valid password. | `Password123!` | Password is accepted. |
 | 5 | Confirm the password (if applicable). | `Password123!` | Password confirmation matches the original password. |
 | 6 | Click the **Register** button. | — | Registration request is submitted successfully. |
@@ -70,7 +70,7 @@ Highest
 
 ## Status
 
-Completed
+Done
 
 ---
 

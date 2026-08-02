@@ -30,7 +30,7 @@ Verify that the system prevents login when a registered user enters an incorrect
 
 | Step | Action | Test Data | Expected Result |
 |------|--------|-----------|-----------------|
-| 1 | Open the login page. | URL: `/login` | Login page is displayed successfully. |
+| 1 | Open the login page. | | Login page is displayed successfully. |
 | 2 | Enter a valid username. | `hamed123` | Username is accepted. |
 | 3 | Enter an incorrect password. | `WrongPassword123!` | Password is accepted. |
 | 4 | Click the **Login** button. | — | Authentication request is submitted. |
@@ -67,7 +67,7 @@ Highest
 
 ## Status
 
-Completed
+Done
 
 ---
 

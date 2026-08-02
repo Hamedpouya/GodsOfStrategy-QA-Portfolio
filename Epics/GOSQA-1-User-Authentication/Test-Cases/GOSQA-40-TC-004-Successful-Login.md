@@ -30,7 +30,7 @@ Verify that a registered user can successfully log in using valid credentials.
 
 | Step | Action | Test Data | Expected Result |
 |------|--------|-----------|-----------------|
-| 1 | Open the login page. | URL: `/login` | Login page is displayed successfully. |
+| 1 | Open the login page. |  | Login page is displayed successfully. |
 | 2 | Enter a valid username. | `hamed123` | Username is accepted. |
 | 3 | Enter the correct password. | `Password123!` | Password is accepted. |
 | 4 | Click the **Login** button. | — | Authentication request is submitted successfully. |
@@ -67,7 +67,7 @@ Highest
 
 ## Status
 
-Completed
+Done
 
 ---
 

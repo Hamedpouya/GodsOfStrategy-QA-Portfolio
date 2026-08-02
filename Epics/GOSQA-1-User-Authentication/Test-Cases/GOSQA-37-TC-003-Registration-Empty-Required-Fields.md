@@ -29,7 +29,7 @@ Verify that the system prevents user registration when one or more required fiel
 
 | Step | Action | Test Data | Expected Result |
 |------|--------|-----------|-----------------|
-| 1 | Open the registration page. | URL: `/register` | Registration page is displayed successfully. |
+| 1 | Open the registration page. | | Registration page is displayed successfully. |
 | 2 | Leave all required fields empty. | Username: Empty<br>Email: Empty<br>Password: Empty | No input is entered into the required fields. |
 | 3 | Click the **Register** button. | — | Registration request is blocked and validation is triggered. |
 
@@ -64,7 +64,7 @@ Highest
 
 ## Status
 
-Completed
+Done
 
 ---
 

@@ -28,7 +28,7 @@ Verify that the system validates required fields and prevents login when mandato
 
 | Step | Action | Test Data | Expected Result |
 |------|--------|-----------|-----------------|
-| 1 | Open the login page. | URL: `/login` | Login page is displayed successfully. |
+| 1 | Open the login page. | | Login page is displayed successfully. |
 | 2 | Leave the username field empty. | Username: Empty | Username field remains blank. |
 | 3 | Leave the password field empty. | Password: Empty | Password field remains blank. |
 | 4 | Click the **Login** button. | — | Login request is blocked and validation is triggered. |
@@ -63,7 +63,7 @@ Highest
 
 ## Status
 
-Completed
+Done
 
 ---
 

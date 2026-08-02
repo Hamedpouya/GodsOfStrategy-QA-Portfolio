@@ -31,8 +31,8 @@ Verify that the system prevents user registration when the email address is alre
 | Step | Action | Test Data | Expected Result |
 |------|--------|-----------|-----------------|
 | 1 | Open the registration page. | URL: `/register` | Registration page is displayed successfully. |
-| 2 | Enter a unique username. | `hamed_new` | Username is accepted. |
-| 3 | Enter an email address that is already registered. | `existing@example.com` | Email address is accepted for validation. |
+| 2 | Enter a unique username. | | Username is accepted. |
+| 3 | Enter an email address that is already registered. |  | Email address is accepted for validation. |
 | 4 | Enter a valid password. | `Password123!` | Password is accepted. |
 | 5 | Confirm the password. | `Password123!` | Password confirmation matches the original password. |
 | 6 | Click the **Register** button. | — | Registration request is submitted. |
@@ -69,7 +69,7 @@ Highest
 
 ## Status
 
-Completed
+Done
 
 ---
 

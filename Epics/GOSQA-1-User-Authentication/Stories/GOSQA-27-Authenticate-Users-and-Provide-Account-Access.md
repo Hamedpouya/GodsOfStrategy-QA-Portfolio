@@ -38,7 +38,7 @@ The platform should allow registered users to securely log in using their accoun
 
 ## Status
 
-Completed
+Ready for QA
 
 ---
 

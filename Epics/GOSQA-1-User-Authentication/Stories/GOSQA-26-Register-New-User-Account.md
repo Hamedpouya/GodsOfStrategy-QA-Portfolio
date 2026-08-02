@@ -38,7 +38,7 @@ The platform should allow new users to create an account using a username, email
 
 ## Status
 
-Completed
+Ready for QA
 
 ---
 
