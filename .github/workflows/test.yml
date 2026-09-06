@@ -31,21 +31,21 @@ jobs:
         working-directory: GodsOfStrategy
         run: pip install -r requirements.txt
 
-    # 5. Apply database migrations
+    # 5. Apply django-apscheduler migrations first
+      - name: Migrate django-apscheduler
+        working-directory: GodsOfStrategy
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          MESSAGE_ENCRYPTION_KEY: ${{ secrets.MESSAGE_ENCRYPTION_KEY }}
+        run: python manage.py migrate django_apscheduler
+
+    # 6. Apply all database migrations
       - name: Run migrations
         working-directory: GodsOfStrategy
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
           MESSAGE_ENCRYPTION_KEY: ${{ secrets.MESSAGE_ENCRYPTION_KEY }}
         run: python manage.py migrate
-
-    # 6. Start Django server
-      - name: Start Django server
-        working-directory: GodsOfStrategy
-        env:
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          MESSAGE_ENCRYPTION_KEY: ${{ secrets.MESSAGE_ENCRYPTION_KEY }}
-        run: python manage.py runserver 127.0.0.1:8000 &
 
       # 7. Install QA dependencies
       - name: Install QA dependencies
