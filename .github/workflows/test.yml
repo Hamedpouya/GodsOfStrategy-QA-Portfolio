@@ -57,7 +57,18 @@ jobs:
         working-directory: automation/Automation_Testing
         run: python -m playwright install --with-deps chromium
 
-      # 9. Run automated tests
+
+    # 9. Start Django server
+      - name: Start Django server
+        working-directory: GodsOfStrategy
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          MESSAGE_ENCRYPTION_KEY: ${{ secrets.MESSAGE_ENCRYPTION_KEY }}
+        run: |
+          python manage.py runserver 127.0.0.1:8000 &
+
+
+      # 10. Run automated tests
       - name: Run tests
         working-directory: automation/Automation_Testing
-        run: pytest
+        pytest tests/ -v
