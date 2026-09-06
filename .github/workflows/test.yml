@@ -60,4 +60,4 @@ jobs:
       # 9. Run automated tests
       - name: Run tests
         working-directory: automation/Automation_Testing
-        run: pytest
+        run: pytest tests/
