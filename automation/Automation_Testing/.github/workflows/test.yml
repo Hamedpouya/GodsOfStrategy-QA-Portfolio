@@ -1,0 +1,57 @@
+name: Tests
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout QA repository
+      - name: Checkout QA repository
+        uses: actions/checkout@v4
+
+      # 2. Checkout application repository
+      - name: Checkout application repository
+        uses: actions/checkout@v4
+        with:
+          repository: Hamedpouya/GodsOfStrategy
+          token: ${{ secrets.GODS_OF_STRATEGY_TOKEN }}
+          path: GodsOfStrategy
+
+      # 3. Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # 4. Install application dependencies
+      - name: Install application dependencies
+        working-directory: GodsOfStrategy
+        run: pip install -r requirements.txt
+
+      # 5. Apply database migrations
+      - name: Run migrations
+        working-directory: GodsOfStrategy
+        run: python manage.py migrate
+
+      # 6. Start Django server
+      - name: Start Django server
+        working-directory: GodsOfStrategy
+        run: python manage.py runserver 127.0.0.1:8000 &
+
+      # 7. Install QA dependencies
+      - name: Install QA dependencies
+        working-directory: automation/Automation_Testing
+        run: pip install -r requirements.txt
+
+      # 8. Install Playwright browsers and dependencies
+      - name: Install Playwright browsers
+        working-directory: automation/Automation_Testing
+        run: playwright install --with-deps
+
+      # 9. Run automated tests
+      - name: Run tests
+        working-directory: automation/Automation_Testing
+        run: pytest
