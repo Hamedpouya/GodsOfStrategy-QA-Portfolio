@@ -1,4 +1,3 @@
-```yaml
 name: Tests
 
 on:
@@ -30,42 +29,35 @@ jobs:
       # 4. Install application dependencies
       - name: Install application dependencies
         working-directory: GodsOfStrategy
-        run: |
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
-      # 5. Apply django-apscheduler migrations first
+    # 5. Apply django-apscheduler migrations first
       - name: Migrate django-apscheduler
         working-directory: GodsOfStrategy
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
           MESSAGE_ENCRYPTION_KEY: ${{ secrets.MESSAGE_ENCRYPTION_KEY }}
-        run: |
-          python manage.py migrate django_apscheduler
+        run: python manage.py migrate django_apscheduler
 
-      # 6. Apply all database migrations
+    # 6. Apply all database migrations
       - name: Run migrations
         working-directory: GodsOfStrategy
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
           MESSAGE_ENCRYPTION_KEY: ${{ secrets.MESSAGE_ENCRYPTION_KEY }}
-        run: |
-          python manage.py migrate
+        run: python manage.py migrate
 
       # 7. Install QA dependencies
       - name: Install QA dependencies
         working-directory: automation/Automation_Testing
-        run: |
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
-      # 8. Install Playwright browsers and system dependencies
+      # 8. Install Playwright browsers and dependencies
       - name: Install Playwright browsers
         working-directory: automation/Automation_Testing
-        run: |
-          python -m playwright install --with-deps chromium
+        run: python -m playwright install --with-deps chromium
 
       # 9. Run automated tests
       - name: Run tests
         working-directory: automation/Automation_Testing
-        run: |
-          pytest tests/ -v
-```
+        run: pytest
